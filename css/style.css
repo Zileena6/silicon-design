@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-color: #f3f6ff;
+  --secondary-color: #eff2fc;
+  --divider-color: #e2e5f1;
+  --border-color: #d4d7e5;
+  --input-color: #b4b7c9;
+  --text-muted-color: #9397ad;
+  --text-color: #565973;
+  --nav-color: #33354d;
+  --heading-color: #0b0f19;
+
+  --brand_primary: #6366f1;
+  --system_error: #ef4444;
+  --system_success: #22c55e;
+  --system_warning: #ffba08;
+  --system_info: #4c82f7;
+
+  --gradient-color: linear-gradient(
+    90deg,
+    rgba(99, 102, 241, 1) 0%,
+    rgba(139, 92, 246, 1) 50%,
+    rgba(217, 70, 239, 1) 100%
+  );
+}
+
+[data-theme='dark'] {
+  --background-color: #0b0f19;
+  --secondary-color: #33354d;
+  --divider-color: #565973;
+  --border-color: #9397ad;
+  --input-color: #b4b7c9;
+  --text-muted-color: #d4d7e5;
+  --text-color: #e2e5f1;
+  --nav-color: #eff2fc;
+  --heading-color: #f3f6ff;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
