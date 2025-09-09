@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,5 +13,39 @@
     <script type="module" src="script.js"></script>
     <title>Silicon Design</title>
   </head>
-  <body data-theme="dark"></body>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <a href="#">
+          <img
+            src="./public/images/silicon-logo-light.svg"
+            alt="Silicon Logo for light background"
+          />
+        </a>
+      </div>
+      <div class="darkmode-signin-container">
+        <div id="switch" class="switch">
+          <span class="dark-mode"></span>
+          <div class="theme-switch">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="menu">
+          <div class="burger"></div>
+        </div>
+
+        <div class="signin-container">
+          <a href="#" class="signin-btn">
+            <img
+              src="./public/icons/avatar.svg"
+              alt="user avatar"
+              class="avatar"
+            />
+            <span>Sign in / up</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  </body>
 </html>
