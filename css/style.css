@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /* border: 1px solid red; */
 }
 
 :root {
@@ -44,6 +45,13 @@
   --text-color: #e2e5f1;
   --nav-color: #eff2fc;
   --heading-color: #f3f6ff;
+
+  --radial-gradient: radial-gradient(
+    118% 116.18% at 50% 100%,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(218, 70, 239, 0.05) 50%,
+    rgba(19, 16, 34, 0.01) 100%
+  );
 }
 
 html,
@@ -51,19 +59,22 @@ body {
   scroll-behavior: smooth;
   color: var(--text-color);
   background-color: var(--background-color);
+  width: 100%;
 }
 
+/* MARK: Header */
+
 .header {
+  max-width: 1320px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1320px;
   height: 52px;
   margin: 0.7rem auto;
   padding: 1rem;
 
   @media (min-width: 768px) {
-    margin: 20px;
+    margin: 1.25rem;
   }
 
   @media (min-width: 1024px) {
@@ -175,17 +186,179 @@ body {
 
   .signin-btn {
     display: none;
-    padding: 9px 20px;
+    padding: 0.56rem 1.25rem;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    border-radius: 4px;
+    gap: 0.5rem;
+    border-radius: 0.25rem;
     background: var(--Brand-Primary, #6366f1);
     color: var(--White, #fff);
     text-decoration: none;
 
     @media (min-width: 1024px) {
       display: inline-flex;
+    }
+  }
+}
+
+/* MARK: Hero section*/
+
+.hero {
+  width: 100%;
+  color: var(--text-color);
+  background: radial-gradient(
+    118% 116.18% at 50% 100%,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(218, 70, 239, 0.05) 41.83%,
+    rgba(241, 244, 253, 0.07) 82.52%
+  );
+
+  @media (min-width: 768px) {
+    height: 38.8rem;
+  }
+
+  @media (min-width: 1024px) {
+    height: 50rem;
+  }
+
+  .hero-section {
+    max-width: 1320px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      grid-template-rows: 20% 10% 35.8%;
+      padding: 0 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 15% 25% 35% 25%;
+      padding: 0 1rem;
+    }
+
+    .hero-title {
+      color: var(--heading-color);
+      padding: 2rem;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        width: 30rem;
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin: 0 auto;
+
+        grid-area: 1 / span 3;
+      }
+
+      @media (min-width: 1024px) {
+        grid-area: 2 / 1;
+        text-align: left;
+        align-self: end;
+        width: 100%;
+        padding: 0 8rem 0 0;
+        font-size: 1.8rem;
+      }
+    }
+
+    .hero-content {
+      padding-bottom: 6rem;
+
+      @media (min-width: 768px) {
+        grid-area: 3 / 1;
+      }
+
+      .hero-text {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 400;
+        line-height: 1.7rem;
+        padding: 0.7rem;
+
+        @media (min-width: 768px) {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+        }
+
+        @media (min-width: 768px) {
+          padding-left: 0;
+        }
+
+        @media (min-width: 1024px) {
+          padding: 1.5rem 0;
+        }
+      }
+
+      .link-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2rem;
+
+        @media (min-width: 768px) {
+          flex-direction: row;
+        }
+
+        @media (min-width: 1024px) {
+          padding: 0;
+          justify-content: start;
+        }
+
+        .link-btn {
+          .apple-icon {
+            height: 40px;
+          }
+
+          .google-icon {
+            height: 60px;
+          }
+        }
+      }
+    }
+
+    .hero-image {
+      display: none;
+      position: relative;
+      height: 27rem;
+      overflow: hidden;
+      grid-area: 2 / span 2 / 2;
+
+      @media (min-width: 768px) {
+        display: block;
+
+        img {
+          height: 118%;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        grid-area: 1 / 2 / span 3;
+        height: 800px;
+
+        img {
+          padding-top: 8rem;
+        }
+      }
+
+      .phone-front {
+        position: absolute;
+        right: 0;
+        z-index: 1;
+      }
+
+      .phone-behind {
+        position: absolute;
+        top: 5rem;
+        right: 9rem;
+
+        @media (min-width: 1024px) {
+          top: 9rem;
+          right: 15rem;
+        }
+      }
     }
   }
 }
