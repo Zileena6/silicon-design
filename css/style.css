@@ -32,6 +32,7 @@
   );
 
   font-family: 'Manrope', sans-serif;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -363,6 +364,8 @@ body {
   }
 }
 
+/* MARK: Brands section*/
+
 .brands {
   display: none;
 
@@ -408,6 +411,8 @@ body {
     }
   }
 }
+
+/* MARK: Features section*/
 
 .features {
   max-width: 1296px;
@@ -497,6 +502,96 @@ body {
 
     @media (min-width: 1024px) {
       display: block;
+    }
+  }
+}
+
+/* MARK: How Does It Work? */
+
+.functionality {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 4rem 0.8rem;
+
+  .func-title {
+    color: var(--heading-color);
+    font-size: 1.7rem;
+    font-weight: 800;
+    padding-bottom: 2rem;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+
+    @media (min-width: 1024px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .tablet-view {
+      display: none;
+    }
+  }
+
+  .desktop-view {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+
+  .func-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+
+    @media (min-width: 768px) {
+      img {
+        width: 12.6rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      gap: 7rem;
+      img {
+        width: 20.5rem;
+      }
+    }
+
+    .side-image {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+  }
+
+  .func-subtitle {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.8rem;
+    max-width: 27rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+
+    @media (min-width: 1024px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .func-text {
+    max-width: 27rem;
+    margin: 0 auto;
+    line-height: 1.6rem;
+
+    @media (min-width: 1024px) {
+      max-width: 40rem;
     }
   }
 }
