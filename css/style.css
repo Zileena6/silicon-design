@@ -61,6 +61,12 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   width: 100%;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--heading-color);
+  }
 }
 
 /* MARK: Header */
@@ -634,9 +640,6 @@ body {
         width: 26rem;
 
         h2 {
-          font-size: 2rem;
-          font-weight: 800;
-          color: var(--heading-color);
           padding: 4rem 1.6rem 2rem 0;
         }
 
@@ -683,9 +686,6 @@ body {
         width: 32rem;
 
         h2 {
-          font-size: 2rem;
-          font-weight: 800;
-          color: var(--heading-color);
           padding: 2rem 1.6rem 2rem 0;
         }
         .pay-wrapper {
@@ -709,6 +709,64 @@ body {
 }
 
 /* MARK: Testimonials */
+
+.testimonials {
+  display: none;
+
+  @media (min-width: 1200px) {
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    padding: 7rem 19.5rem;
+
+    .testimonials-title {
+      width: 17rem;
+    }
+
+    .review-container {
+      display: flex;
+      gap: 1.5rem;
+
+      .review-card {
+        background-color: var(--background-color);
+        width: 26rem;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        position: relative;
+
+        box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.06),
+          0 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+
+        .quote-icon {
+          position: absolute;
+          top: -1.6rem;
+          left: 1rem;
+        }
+
+        .review-stars {
+          padding-top: 1.5rem;
+        }
+
+        .review-content {
+          font-size: 1.125rem;
+          line-height: 1.8rem;
+          padding: 1.5rem 0;
+        }
+
+        .user {
+          display: flex;
+          gap: 1rem;
+
+          .user-name {
+            color: var(--heading-color);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
 
 /* MARK: FAQ */
 
