@@ -778,7 +778,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3rem 0;
+  padding: 3rem 0 2rem 0;
   margin: 0 auto;
 
   @media (min-width: 768px) {
@@ -1030,6 +1030,132 @@ body {
 }
 
 /* MARK: Subscribe */
+
+.subscribe-section {
+  max-width: 1320px;
+  margin: 0 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    margin: 0 2rem;
+  }
+
+  @media (min-width: 1200px) {
+    margin: 0 auto;
+  }
+
+  .subscribe {
+    width: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding: 2.2rem 1rem;
+    row-gap: 2.4rem;
+
+    @media (min-width: 768px) {
+      padding: 5rem 1.5rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
+
+    @media (min-width: 1200px) {
+      margin: 0 2rem;
+    }
+
+    .newsletter {
+      display: flex;
+      gap: 1rem;
+
+      @media (min-width: 1024px) {
+        width: 40%;
+        font-size: 1.5rem;
+      }
+
+      @media (min-width: 1200px) {
+        width: 45%;
+      }
+
+      p {
+        color: var(--heading-color);
+        font-size: 1.35rem;
+        line-height: 140%;
+        font-weight: 800;
+        padding-top: 0.6rem;
+      }
+
+      .small-screen {
+        @media (min-width: 1200px) {
+          display: none;
+        }
+
+        @media (min-width: 1440px) {
+        }
+      }
+
+      .large-screen {
+        display: none;
+
+        @media (min-width: 1200px) {
+          display: inline;
+        }
+      }
+    }
+
+    .subscribe-container {
+      display: inline-flex;
+      justify-content: flex-end;
+      max-width: 30rem;
+
+      @media (min-width: 768px) {
+        width: 65%;
+      }
+
+      .input-container {
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid var(--border-color);
+        border-right: none;
+        border-radius: 0.5rem 0 0 0.5rem;
+        padding: 0.9rem;
+
+        display: inline-flex;
+
+        img {
+          padding-right: 0.9rem;
+        }
+
+        input {
+          width: 100%;
+          font-size: 1rem;
+          border: none;
+
+          &::placeholder {
+            color: var(--input-color);
+          }
+        }
+      }
+
+      button {
+        color: white;
+        background-color: var(--brand_primary);
+        border: 1px solid var(--brand_primary);
+        border-radius: 0 0.5rem 0.5rem 0;
+        padding: 0.8rem 1.125rem;
+      }
+    }
+  }
+}
 
 /* MARK: Footer */
 
