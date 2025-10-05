@@ -1,16 +1,29 @@
-// switch function
+// theme toggle function
 
 const themeToggle = document.querySelector('#switch');
+const rootElem = document.documentElement;
 
-const switchTheme = () => {
-  const rootElem = document.documentElement;
-  let dataTheme = rootElem.getAttribute('data-theme'),
-    newTheme;
+rootElem.dataset.theme ||= window.matchMedia('(prefers-color-scheme: dark)')
+  .matches
+  ? 'dark'
+  : 'light';
 
-  newTheme = dataTheme === 'light' ? 'dark' : 'light';
-
-  rootElem.setAttribute('data-theme', newTheme);
+themeToggle.addEventListener('click', () => {
+  rootElem.dataset.theme =
+    rootElem.dataset.theme === 'light' ? 'dark' : 'light';
   themeToggle.classList.toggle('toggle-dark');
-};
+});
 
-document.querySelector('.theme-switch').addEventListener('click', switchTheme);
+// accordion toggle function
+
+const accordions = document.querySelectorAll('.accordion input');
+
+accordions.forEach((radio) => {
+  radio.addEventListener('click', function () {
+    if (this.previousChecked) {
+      this.checked = false;
+    }
+
+    accordions.forEach((r) => (r.previousChecked = r.checked));
+  });
+});
