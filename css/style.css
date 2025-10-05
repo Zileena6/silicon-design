@@ -21,6 +21,9 @@
   --heading-color: #0b0f19;
   --accordion-bg: #f3f6ff;
 
+  --logo-img: url('../public/images/silicon-logo-light.svg') no-repeat center /
+    contain;
+
   --brand_primary: #6366f1;
   --system_error: #ef4444;
   --system_success: #22c55e;
@@ -51,6 +54,9 @@
   --heading-color: #f3f6ff;
   --accordion-bg: #0f1420;
 
+  --logo-img: url('../public/images/silicon-logo-dark.svg') no-repeat center /
+    contain;
+
   --radial-gradient: radial-gradient(
     118% 116.18% at 50% 100%,
     rgba(99, 102, 241, 0.1) 0%,
@@ -77,12 +83,20 @@ body {
 
 .header {
   max-width: 1320px;
+  background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 52px;
   margin: 0.7rem auto;
   padding: 1rem;
+
+  .logo-img {
+    background: var(--logo-img);
+    display: block;
+    width: 150px;
+    height: 50px;
+  }
 
   @media (min-width: 768px) {
     margin: 1.25rem;
