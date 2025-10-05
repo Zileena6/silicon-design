@@ -8,6 +8,8 @@
 }
 
 :root {
+  interpolate-size: allow-keywords;
+
   --background-color: #f3f6ff;
   --secondary-color: #e8ebf3;
   --divider-color: #e2e5f1;
@@ -100,32 +102,33 @@ body {
     .switch {
       display: inline-flex;
       align-items: center;
-      padding-right: 22px;
+      padding: 1.3rem;
 
       span {
         display: none;
       }
 
       span::before {
-        content: 'Light Mode >';
+        content: 'Light Mode';
       }
 
       &.toggle-dark {
         span::before {
-          content: 'Dark Mode >';
+          content: 'Dark Mode';
         }
       }
 
       @media (min-width: 768px) {
-        padding-right: 47px;
+        padding-right: 3rem;
 
         span {
           display: block;
+          padding: 0.5rem;
         }
       }
 
       .theme-switch {
-        background-color: var(--input-color);
+        background-color: var(--brand_primary);
         width: 46px;
         height: 24px;
         border-radius: 50px;
@@ -140,13 +143,18 @@ body {
           width: 24px;
           height: 24px;
           background-color: #fff;
-          border: 3px solid var(--input-color);
+          border: 3px solid var(--brand_primary);
           border-radius: 50px;
         }
       }
 
       &.toggle-dark .theme-switch {
         justify-content: start;
+        background-color: var(--input-color);
+      }
+
+      &.toggle-dark .circle {
+        border-color: var(--input-color);
       }
     }
   }
@@ -714,55 +722,62 @@ body {
 
 .testimonials {
   display: none;
+  background-color: var(--secondary-color);
 
   @media (min-width: 1200px) {
-    background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
-    gap: 8rem;
-    padding: 7rem 19.5rem;
 
-    .testimonials-title {
-      width: 17rem;
-    }
-
-    .review-container {
+    .testimonials-container {
+      max-width: 1320px;
       display: flex;
-      gap: 1.5rem;
+      justify-content: space-between;
+      padding: 6rem 2rem;
 
-      .review-card {
-        background-color: var(--background-color);
-        width: 26rem;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        position: relative;
+      .testimonials-title {
+        text-align: left;
 
-        box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.06),
-          0 2px 6.4px -1px rgba(19, 16, 34, 0.03);
+        width: 22%;
+      }
 
-        .quote-icon {
-          position: absolute;
-          top: -1.6rem;
-          left: 1rem;
-        }
+      .review-container {
+        display: flex;
+        gap: 1.5rem;
 
-        .review-stars {
-          padding-top: 1.5rem;
-        }
+        .review-card {
+          background-color: var(--background-color);
+          width: 26rem;
+          padding: 1.5rem;
+          border-radius: 0.5rem;
+          position: relative;
 
-        .review-content {
-          font-size: 1.125rem;
-          line-height: 1.8rem;
-          padding: 1.5rem 0;
-        }
+          box-shadow: 0 4.4px 12px -1px rgba(19, 16, 34, 0.06),
+            0 2px 6.4px -1px rgba(19, 16, 34, 0.03);
 
-        .user {
-          display: flex;
-          gap: 1rem;
+          .quote-icon {
+            position: absolute;
+            top: -1.6rem;
+            left: 1rem;
+          }
 
-          .user-name {
-            color: var(--heading-color);
-            font-weight: 700;
+          .review-stars {
+            padding-top: 1.5rem;
+          }
+
+          .review-content {
+            font-size: 1.125rem;
+            line-height: 1.8rem;
+            padding: 1.5rem 0;
+          }
+
+          .user {
+            display: flex;
+            gap: 1rem;
+
+            .user-name {
+              color: var(--heading-color);
+              font-weight: 700;
+            }
           }
         }
       }
@@ -966,12 +981,14 @@ body {
 
     & .content {
       background-color: var(--accordion-bg);
-      max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease;
       padding: 0 1rem;
       border: 1px solid var(--border-color);
       border-top: none;
+
+      block-size: 0;
+      transition: block-size 0.4s ease;
+      transition-behavior: allow-discrete;
 
       @media (min-width: 768px) {
         border-bottom: 1px solid var(--border-color);
@@ -988,8 +1005,9 @@ body {
     }
 
     & input:checked + label + .content {
-      max-height: 50rem;
+      /* max-height: 50rem; */
       padding: 1rem;
+      block-size: auto;
 
       @media (min-width: 768px) {
         padding: 1.5rem;
@@ -1097,9 +1115,6 @@ body {
       .small-screen {
         @media (min-width: 1200px) {
           display: none;
-        }
-
-        @media (min-width: 1440px) {
         }
       }
 
